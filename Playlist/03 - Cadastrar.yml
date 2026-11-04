@@ -5,14 +5,14 @@ info:
 
 http:
   method: POST
-  url: http://localhost:5050/api/musicas
+  url: "{{baseUrl}}/api/musicas"
   body:
     type: json
-    data: |
-      {
-        "titulo": "In Bloom",
-        "artista": "NIRVANA"
-      }
+    data: |2-
+       {
+          "titulo": "Creep",
+          "artista": "Radiohead"
+        }
   auth: inherit
 
 settings:
