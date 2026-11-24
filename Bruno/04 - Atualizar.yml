@@ -1,11 +1,11 @@
 info:
   name: 04 - Atualizar
   type: http
-  seq: 5
+  seq: 4
 
 http:
   method: PUT
-  url: "{{baseUrl}}/api/musicas/3"
+  url: http://localhost:5050/api/musicas/3
   body:
     type: json
     data: |2-

@@ -1,4 +1,7 @@
+using ApiPlaylistDeMusicas.models;
 using Microsoft.EntityFrameworkCore;
+using ApiPlaylistDeMusicas.Data;
+using ApiPlaylistDeMusicas.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,18 @@ builder.Services.AddDbContext<ApiDbContext>(options =>
     options.UseSqlite("Data Source=playlist.db"));
 
 var app = builder.Build();
+app.UseExceptionHandler(errorApp =>
+{
+    errorApp.Run(async context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        context.Response.ContentType = "application/json";
+        await context.Response.WriteAsJsonAsync(new
+        {
+            mensagem = "Ocorreu um erro interno. Tente novamente mais tarde."
+        });
+    });
+});
 
 using (var scope = app.Services.CreateScope())
 {
@@ -15,6 +30,7 @@ using (var scope = app.Services.CreateScope())
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
 
 app.MapPost("/api/musicas", async (MusicaEntradaDto dados, ApiDbContext db) =>
 {
@@ -59,17 +75,3 @@ app.MapDelete("/api/musicas/{id:int}", async (int id, ApiDbContext db) =>
 
 app.Run();
 
-record MusicaEntradaDto(string Titulo, string Artista);
-
-class MusicaEntity
-{
-    public int Id { get; set; }
-    public string Titulo { get; set; } = string.Empty;
-    public string Artista { get; set; } = string.Empty;
-}
-
-class ApiDbContext : DbContext
-{
-    public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options) { }
-    public DbSet<MusicaEntity> Musicas => Set<MusicaEntity>();
-}

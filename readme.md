@@ -1,6 +1,10 @@
-# API Playlists
+# API Playlists — Avaliação Semestral (AS)
 
-API REST minimalista para gerenciamento de playlists de músicas, desenvolvida com **ASP.NET Core** e **.NET 10**.
+API REST para gerenciamento de playlists de músicas, desenvolvida com **ASP.NET Core** e **.NET 10** com **Entity Framework Core** e **SQLite**. O objetivo desta Avaliação Semestral (AS) é consolidar o projeto desenvolvido na AP1 e na AP2, aplicando a organização do código por responsabilidade.
+
+## Collection do Bruno
+
+A Collection executável do Bruno, junto com o ambiente local e as requisições de teste da API, fica na pasta `bruno/` na raiz do repositório.
 
 ## Requisitos
 
@@ -13,6 +17,15 @@ API REST minimalista para gerenciamento de playlists de músicas, desenvolvida c
 ```bash
 dotnet ef database update
 ```
+
+## Árvore das pastas
+```├── Data/          # Contexto do Entity Framework Core (DbContext) e configuração do banco
+├── Dtos/          # Tipos de entrada e saída (DTOs / records)
+├── Models/        # Entidade de domínio do recurso da playlist
+├── wwwroot/       # Arquivos da interface web já existente
+├── bruno/         # Collection do Bruno e ambiente local de testes
+├── Program.cs     # Inicialização, registro do contexto, middleware, tratamento de erros e rotas
+└── README.md      # Documentação do projeto e link do vídeo da AS```
 
 ## Como Executar
 
@@ -40,7 +53,6 @@ Após iniciar a API com o comando acima, abra o seu navegador e acesse o endere�
 
 ---
 
----
 
 ### Listar músicas
 
@@ -89,7 +101,6 @@ DELETE /api/musicas/1
 * Os dados agora são gravados em um banco de dados SQLite (Entity Framework Core) e não são perdidos ao reiniciar a aplicação.
 * Operações para um ID inexistente retornam HTTP `404 Not Found`.
 * O cadastro retorna HTTP `201 Created` e a remoção bem-sucedida retorna HTTP `204 No Content`.
-=======
 
 
 ## Vídeo de Demonstração

@@ -1,11 +1,11 @@
 info:
   name: 05 - Remover
   type: http
-  seq: 6
+  seq: 5
 
 http:
   method: DELETE
-  url: "{{baseUrl}}/api/musicas/3"
+  url: http://localhost:5050/api/musicas/3
   auth: inherit
 
 settings:
