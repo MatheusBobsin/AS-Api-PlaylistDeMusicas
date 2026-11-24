@@ -111,7 +111,7 @@ AP1
 https://drive.google.com/file/d/1dW4hdHI181M-pTSArmDzKzr32G-oTR_t/view?usp=sharing
 
 AP2
-https://drive.google.com/drive/u/1/folders/1ziFiY_z6EH5-_XF6NrNv0mRkaRcn5J-3
+https://drive.google.com/file/d/10TfSoMaNEVn38cdpoqdds-93I2PdR8Sd/view?usp=sharing
 
 AS
-https://drive.google.com/drive/u/1/folders/1Ogv6HKj80zHgFgfFSQy3wblnD80WvG6v
+https://drive.google.com/file/d/1RiXLo2t7Rg15lBlmZT7xKTDY7HC_s0Xu/view?usp=sharing
