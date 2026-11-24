@@ -19,13 +19,15 @@ dotnet ef database update
 ```
 
 ## Árvore das pastas
-```├── Data/          # Contexto do Entity Framework Core (DbContext) e configuração do banco
+```
+├── Data/          # Contexto do Entity Framework Core (DbContext) e configuração do banco
 ├── Dtos/          # Tipos de entrada e saída (DTOs / records)
 ├── Models/        # Entidade de domínio do recurso da playlist
 ├── wwwroot/       # Arquivos da interface web já existente
 ├── bruno/         # Collection do Bruno e ambiente local de testes
 ├── Program.cs     # Inicialização, registro do contexto, middleware, tratamento de erros e rotas
-└── README.md      # Documentação do projeto e link do vídeo da AS```
+└── README.md      # Documentação do projeto e link do vídeo da AS
+```
 
 ## Como Executar
 
@@ -105,4 +107,8 @@ DELETE /api/musicas/1
 
 ## Vídeo de Demonstração
 
+AP2
 https://drive.google.com/drive/u/1/folders/1ziFiY_z6EH5-_XF6NrNv0mRkaRcn5J-3
+
+AS
+https://drive.google.com/drive/u/1/folders/1Ogv6HKj80zHgFgfFSQy3wblnD80WvG6v
